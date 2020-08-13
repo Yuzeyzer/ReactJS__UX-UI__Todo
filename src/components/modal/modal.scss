@@ -1,0 +1,274 @@
+.modal {
+  background-color: #fff9c4;
+  padding: 35px 40px;
+  border-radius: 30px;
+  min-width: 590px;
+  min-height: 590px;
+
+  &-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    background-color: #323759;
+    padding: 20px;
+
+    transition: all 3s ease;
+    text-align: center;
+    h3 {
+      width: 40%;
+      color: #ffffff;
+      white-space: nowrap;
+      margin-right: 5%;
+      font-size: 15px;
+      text-align: right;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      margin-top: 25px;
+    }
+    input,
+    select {
+      width: 50%;
+      padding: 0;
+      border-radius: 2px;
+      border: none;
+      outline: none;
+      background-color: #453a5d;
+      color: #f1557e;
+    }
+    select {
+      height: 30px;
+    }
+    input {
+      height: 35px;
+      padding: 5px 10px;
+    }
+    button {
+      background-color: #f1557e;
+      border: none;
+      color: #ffffff;
+      padding: 8px 20px 8px 10px;
+      margin-left: 60px;
+      cursor: pointer;
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.react-modal {
+  position: static !important;
+}
+.react-modal-overlay {
+  display: none;
+}
+#modal-container {
+  position: fixed;
+  display: table;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  z-index: 1;
+  &.one {
+    transform: scaleY(0.01) scaleX(0);
+    -webkit-animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    .modal-background {
+      .modal {
+        transform: scale(0);
+        -webkit-animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      }
+    }
+    &.out {
+      transform: scale(1);
+      -webkit-animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      .modal-background {
+        .modal {
+          -webkit-animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+      }
+    }
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+#modal-container {
+  position: fixed;
+  display: table;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  z-index: 1;
+  &.one {
+    .modal-background {
+      .modal {
+        transform: scale(0);
+        -webkit-animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      }
+    }
+    &.out {
+      .modal-background {
+        .modal {
+          -webkit-animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-background {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    .modal {
+      display: inline-block;
+      font-weight: 300;
+      position: relative;
+    }
+  }
+}
+
+.content {
+  min-height: 100%;
+  height: 100%;
+  background: white;
+  position: relative;
+  z-index: 0;
+  h1 {
+    padding: 75px 0 30px 0;
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .buttons {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    .button {
+      display: inline-block;
+      text-align: center;
+      padding: 10px 15px;
+      margin: 10px;
+      background: red;
+      font-size: 18px;
+      background-color: #efefef;
+      border-radius: 3px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      &:hover {
+        color: white;
+        background: #009bd5;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@-webkit-keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

@@ -1,0 +1,75 @@
+.create-task-from {
+	::-webkit-input-placeholder {
+		color: #fff;
+	}
+	::-moz-placeholder {
+		color: #fff27d;
+	}
+	:-ms-input-placeholder {
+		color: #fff27d;
+	}
+	::-ms-input-placeholder {
+		color: #fff27d;
+	}
+	::placeholder {
+		color: #fff27d;
+	}
+	label {
+		position: relative;
+		input {
+			font-family: "Roboto", sans-serif;
+			margin: 27px 0;
+			width: 100%;
+			text-align: left;
+			color: #ff6d00;
+			background-color: #ff6d00;
+			border-radius: 30px;
+			padding: 15px 30px;
+			height: 50px;
+			color: #fff27d;
+			cursor: pointer;
+			border: none;
+			outline: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+	}
+	svg {
+		position: absolute;
+		display: block;
+		bottom: -2px;
+		right: 30px;
+		width: 20px;
+		height: 20px;
+		pointer-events: none;
+	}
+}
+.create-task-title {
+	text-align: left;
+	font-family: "Open Sans", sans-serif;
+	font-size: 22px;
+	color: #ff6d00;
+}
+
+.create-task-select {
+	font-family: "Roboto", sans-serif;
+	margin: 27px 0;
+	width: 100%;
+	text-align: left;
+	color: #ff6d00;
+	background-color: #ff6d00;
+	border-radius: 30px;
+	padding: 15px 30px;
+	height: 50px;
+	color: #fff27d;
+	cursor: pointer;
+	border: 2px solid white;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	option {
+		border-radius: 30px;
+	}
+}

@@ -1,35 +1,47 @@
+@function vw($value, $base: 1600) {
+	@return $value / $base * 100vw;
+}
+
+@function vh($value, $base: 800) {
+	@return $value / $base * 100vh;
+}
+
+@function vmin($value, $base: 375) {
+	@return $value / $base * 100vmin;
+}
+
 .list-item {
   &__wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 25px;
+    margin-bottom: vw(25);
   }
   label {
     display: flex;
     align-items: center;
     background-color: #ff6d00;
-    border-radius: 30px;
-    padding: 15px 30px;
-    height: 50px;
-    width: 420px;
+    border-radius: vw(30);
+    padding: vw(15) vw(30);
+    height: vw(50);
+    width: vw(420);
     color: #fff27d;
     cursor: pointer;
     input {
-      margin-right: 10px;
+      margin-right: vw(10);
       border-radius: 50%;
     }
     h3 {
       font-family: "Roboto", sans-serif;
       font-weight: 400;
-      font-size: 16px;
+      font-size: vw(16);
     }
   }
 
   .delete-item {
     display: flex;
     border-radius: 50%;
-    padding: 13px;
+    padding: vw(13);
     background-color: #fff27d;
     cursor: pointer;
     -webkit-animation: opacity 0.6s;
@@ -61,7 +73,7 @@
 input[type="checkbox"]:checked,
 input[type="checkbox"]:not(:checked) {
   position: absolute;
-  left: -1px;
+  left: vw(-1);
   opacity: 0;
   visibility: none;
 }
@@ -70,9 +82,9 @@ input[type="checkbox"]:checked + label,
 input[type="checkbox"]:not(:checked) + label {
   display: inline-block;
   position: relative;
-  line-height: 20px;
+  line-height: vw(20);
   cursor: pointer;
-  padding: 10px;
+  padding: vw(10);
   width: 0;
 }
 
@@ -80,11 +92,11 @@ input[type="checkbox"]:checked + label:before,
 input[type="checkbox"]:not(:checked) + label:before {
   content: "";
   position: absolute;
-  left: -20px;
+  left: vw(-20);
   top: 50%;
   transform: translateY(-50%);
-  width: 25px;
-  height: 25px;
+  width: vw(25);
+  height: vw(25);
   border-radius: 50%;
   background-color: #fff27d;
 }
@@ -103,14 +115,14 @@ input[type="checkbox"]:not(:checked) + label:after {
 
 input[type="checkbox"]:checked + label:after,
 input[type="checkbox"]:not(:checked) + label:after {
-  left: -14px;
+  left: vw(-14);
   top: 40%;
   transform: translateY(-50%);
-  width: 10px;
-  height: 5px;
-  border-radius: 1px;
-  border-left: 4px solid #ff6d00;
-  border-bottom: 4px solid #ff6d00;
+  width: vw(10);
+  height: vw(5);
+  border-radius: vw(1);
+  border-left: vw(4) solid #ff6d00;
+  border-bottom: vw(4) solid #ff6d00;
   transform: rotate(-45deg);
 }
 
@@ -123,12 +135,12 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .list-child {
-  margin-left: 30px;
-  margin-bottom: 25px;
+  margin-left: vw(30);
+  margin-bottom: vw(25);
   &__wrap {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: vw(10);
   }
   &__title {
     display: flex;
@@ -136,10 +148,10 @@ input[type="checkbox"]:checked + label:after {
   }
   label {
     background-color: #fff27d;
-    border-radius: 30px;
-    padding: 15px 30px;
-    height: 50px;
-    width: 420px;
+    border-radius: vw(30);
+    padding: vw(15) vw(30);
+    height: vw(50);
+    width: vw(420);
     color: #ff6d00;
     width: 81%;
   }
@@ -148,44 +160,45 @@ input[type="checkbox"]:checked + label:after {
   input[type="checkbox"]:not(:checked) + label:before {
     content: "";
     position: absolute;
-    left: -20px;
+    left: vw(-20);
     top: 50%;
     transform: translateY(-50%);
-    width: 25px;
-    height: 25px;
+    width: vw(25);
+    height: vw(25);
     border-radius: 50%;
     background-color: #ff6d00;
   }
   input[type="checkbox"]:checked + label:after,
   input[type="checkbox"]:not(:checked) + label:after {
-    left: -14px;
+    left: vw(-14);
     top: 40%;
     transform: translateY(-50%);
-    width: 10px;
-    height: 5px;
-    border-radius: 1px;
-    border-left: 4px solid #fff27d;
-    border-bottom: 4px solid #fff27d;
+    width: vw(10);
+    height: vw(5);
+    border-radius: vw(1);
+    border-left: vw(4) solid #fff27d;
+    border-bottom: vw(4) solid #fff27d;
     transform: rotate(-45deg);
   }
 }
 
 .btn-add {
+  font-size: vw(16);
   font-family: "Roboto", sans-serif;
   font-weight: 700;
-  padding: 21px;
+  padding: vw(21);
   text-transform: uppercase;
   text-align: center;
   width: 100%;
-  border: 2px solid #ff6d00;
-  border-radius: 30px;
+  border: vw(2) solid #ff6d00;
+  border-radius: vw(30);
   color: #ff6d00;
   background-color: transparent;
   outline: none;
   cursor: pointer;
   transition: 0.3s;
   i {
-    margin-right: 10px;
+    margin-right: vw(10);
   }
 }
 .btn-add:hover {

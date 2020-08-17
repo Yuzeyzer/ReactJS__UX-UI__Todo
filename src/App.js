@@ -56,7 +56,6 @@ const App = () => {
         setTodos(todoItem)
     }
     const removeChild = (id, index) => {
-        console.log(index)
         const todo = [...todos];
         todo.forEach(todoItem => {
             todoItem.child = todoItem.child.filter(task => task.id !== id)

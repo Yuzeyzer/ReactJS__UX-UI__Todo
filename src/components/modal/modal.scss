@@ -1,18 +1,30 @@
+@function vw($value, $base: 1600) {
+	@return $value / $base * 100vw;
+}
+
+@function vh($value, $base: 800) {
+	@return $value / $base * 100vh;
+}
+
+@function vmin($value, $base: 375) {
+	@return $value / $base * 100vmin;
+}
+
 .modal {
   background-color: #fff9c4;
-  padding: 35px 40px;
-  border-radius: 30px;
-  min-width: 590px;
-  min-height: 590px;
+  padding: vw(35) vw(40);
+  border-radius: vw(30);
+  min-width: vw(590);
+  min-height: vw(590);
 
   &-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 450px;
+    width: vw(450);
     background-color: #323759;
-    padding: 20px;
+    padding: vw(20);
 
     transition: all 3s ease;
     text-align: center;
@@ -21,37 +33,37 @@
       color: #ffffff;
       white-space: nowrap;
       margin-right: 5%;
-      font-size: 15px;
+      font-size: vw(15);
       text-align: right;
     }
     label {
       display: flex;
       align-items: center;
-      margin-top: 25px;
+      margin-top: vw(25);
     }
     input,
     select {
       width: 50%;
       padding: 0;
-      border-radius: 2px;
+      border-radius: vw(2);
       border: none;
       outline: none;
       background-color: #453a5d;
       color: #f1557e;
     }
     select {
-      height: 30px;
+      height: vw(30);
     }
     input {
-      height: 35px;
-      padding: 5px 10px;
+      height: vw(35);
+      padding: vw(5) vw(10);
     }
     button {
       background-color: #f1557e;
       border: none;
       color: #ffffff;
-      padding: 8px 20px 8px 10px;
-      margin-left: 60px;
+      padding: vw(8) vw(20) vw(8) vw(10);
+      margin-left: vw(60);
       cursor: pointer;
       i {
         margin-right: 10px;
@@ -160,25 +172,25 @@
   position: relative;
   z-index: 0;
   h1 {
-    padding: 75px 0 30px 0;
+    padding: vw(75) 0 vw(30) 0;
     text-align: center;
-    font-size: 30px;
-    line-height: 30px;
+    font-size: vw(30);
+    line-height: vw(30);
   }
   .buttons {
-    max-width: 800px;
+    max-width: vw(800);
     margin: 0 auto;
     padding: 0;
     text-align: center;
     .button {
       display: inline-block;
       text-align: center;
-      padding: 10px 15px;
-      margin: 10px;
+      padding: vw(10) vw(15);
+      margin: vw(10);
       background: red;
-      font-size: 18px;
+      font-size: vw(18);
       background-color: #efefef;
-      border-radius: 3px;
+      border-radius: vw(3);
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       cursor: pointer;
       &:hover {
